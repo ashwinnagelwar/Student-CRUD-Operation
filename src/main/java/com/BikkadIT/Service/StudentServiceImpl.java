@@ -2,43 +2,48 @@ package com.BikkadIT.Service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.BikkadIT.Model.Student;
+import com.BikkadIT.Repository.StudentRepository;
 
 public class StudentServiceImpl implements StudentServiceI {
+	@Autowired
+	private StudentRepository studentRepository;
 
 	@Override
 	public Student saveStudent(Student stu) {
-		// TODO Auto-generated method stub
-		return null;
+		Student stu1=studentRepository.save(stu);
+		return stu1;
 	}
 
 	@Override
 	public Student getSingleStudent(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Student stu=studentRepository.findById(id).get();
+		return stu;
 	}
 
 	@Override
 	public List<Student> getAllStudent() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Student> stu=(List<Student>) studentRepository.findAll();
+		return stu;
 	}
 
 	@Override
-	public Student updatdeStudent(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Student updatdeStudent(Student stu) {
+		Student stu1 =studentRepository.save(stu);
+		return stu1;
 	}
 
 	@Override
 	public Student deleteStudent(int id) {
-		// TODO Auto-generated method stub
+		studentRepository.deleteById(id);
 		return null;
 	}
 
 	@Override
 	public Student deleteAll() {
-		// TODO Auto-generated method stub
+		studentRepository.deleteAll();
 		return null;
 	}
 

@@ -9,7 +9,7 @@ public interface StudentServiceI {
 	public Student saveStudent(Student stu);
 	public Student getSingleStudent(int id );
 	public List<Student> getAllStudent();
-	public Student updatdeStudent(int id);
+	public Student updatdeStudent(Student stu);
 	public Student deleteStudent(int id);
 	public Student deleteAll();
 
