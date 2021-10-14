@@ -43,10 +43,10 @@ public class StudentController {
 		return new ResponseEntity<List<Student>>(studentList,HttpStatus.FOUND);
 	}
 	
-	@PostMapping("/updateStudent/{id}")
-	public ResponseEntity<Student> updateStudent(@RequestParam int id, @RequestBody Student student)
+	@PostMapping("/updateStudent")
+	public ResponseEntity<Student> updateStudent(@RequestBody Student student)
 	{
-		Student student1=studentServiceI.updatdeStudent(id);
+		Student student1=studentServiceI.updatdeStudent(student);
 		return new ResponseEntity<Student>(student,HttpStatus.OK);
 	}
 	
