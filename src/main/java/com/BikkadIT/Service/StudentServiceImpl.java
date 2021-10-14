@@ -1,5 +1,5 @@
 package com.BikkadIT.Service;
 
-public class StudentServiceImpl {
+public class StudentServiceImpl implements StudentServiceI {
 
 }
